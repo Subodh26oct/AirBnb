@@ -146,7 +146,7 @@ $env:Path = "$env:JAVA_HOME\bin;$env:Path"
 
 ```
 AirBnb/
-├── src/main/java/com/aman/AirBnb/AirBnb/
+├── src/main/java/com/subodh/airbnb/
 │   ├── Controller/          # REST endpoints
 │   ├── Service/             # Business logic
 │   ├── Repository/          # Database access

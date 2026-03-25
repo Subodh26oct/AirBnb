@@ -8,7 +8,7 @@
 		<version>3.4.2</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.Subodh.AirBnb</groupId>
+	<groupId>com.subodh.airbnb</groupId>
 	<artifactId>AirBnb</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>AirBnb</name>
