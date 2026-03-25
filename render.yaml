@@ -1,0 +1,35 @@
+services:
+  - type: web
+    name: airbnb-backend
+    env: java
+    region: oregon
+    plan: free
+    buildCommand: mvn clean install -DskipTests
+    startCommand: java -jar target/AirBnb-0.0.1-SNAPSHOT.jar
+    envVars:
+      - key: SPRING_PROFILES_ACTIVE
+        value: prod
+      - key: SERVER_PORT
+        value: "8080"
+      - key: SPRING_DATASOURCE_URL
+        fromDatabase:
+          name: airbnb-postgres
+          property: connectionString
+      - key: SPRING_DATASOURCE_USERNAME
+        fromDatabase:
+          name: airbnb-postgres
+          property: user
+      - key: SPRING_DATASOURCE_PASSWORD
+        fromDatabase:
+          name: airbnb-postgres
+          property: password
+      - key: SPRING_JPA_HIBERNATE_DDL_AUTO
+        value: update
+      - key: SPRING_JPA_DATABASE_PLATFORM
+        value: org.hibernate.dialect.PostgreSQL10Dialect
+
+databases:
+  - name: airbnb-postgres
+    ipAllowList: []
+    plan: free
+    region: oregon
