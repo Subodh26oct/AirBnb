@@ -24,7 +24,7 @@ The `render.yaml` file in the repository contains the configuration. If using ma
 
 **Build Command:**
 ```bash
-mvn clean install -DskipTests
+mvn clean package -DskipTests
 ```
 
 **Start Command:**
@@ -37,12 +37,9 @@ Configure these in Render dashboard → Environment:
 
 ```
 SPRING_PROFILES_ACTIVE=prod
-SERVER_PORT=8080
-SPRING_DATASOURCE_URL=postgresql://user:password@host:5432/airbnb_db
-SPRING_DATASOURCE_USERNAME=<postgres_username>
-SPRING_DATASOURCE_PASSWORD=<postgres_password>
-SPRING_JPA_HIBERNATE_DDL_AUTO=update
-SPRING_JPA_DATABASE_PLATFORM=org.hibernate.dialect.PostgreSQL10Dialect
+DATABASE_URL=postgresql://user:password@host:5432/airbnb_db
+DB_USERNAME=<postgres_username>
+DB_PASSWORD=<postgres_password>
 JWT_SECRET=<your_secret_key>
 STRIPE_SECRET_KEY=<your_stripe_key>
 STRIPE_WEBHOOK_SECRET=<your_webhook_secret>
@@ -65,7 +62,7 @@ If using the embedded PostgreSQL in Render:
 ### Step 6: Access Your API
 Once deployed, your API will be available at:
 ```
-https://<render-service-name>.onrender.com/api/v1/swagger-ui.html
+https://<render-service-name>.onrender.com/api/v1/swagger-ui/index.html
 ```
 
 ### Monitoring & Logs
